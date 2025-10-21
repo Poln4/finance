@@ -1,0 +1,9 @@
+{% extends "layout.html" %} {% block title %} Portafolio {% endblock %} {% block main %}
+Wallet
+
+{% for stock in stocks %} {% endfor %}
+Symbol	Name	Shares	Price	Total Value
+{{ stock.symbol }}	{{ stock.name }}	{{ stock.total_shares }}	{{ stock.price | usd }}	{{ (stock.price * stock.total_shares) | usd }}
+Cash	{{ cash }}
+Total Value	{{ total_value }}
+{% endblock %}
