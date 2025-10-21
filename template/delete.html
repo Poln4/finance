@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete Account
+{% endblock %}
+
+{% block main %}
+    <h2>Delete Account</h2>
+    <p>Are you sure that you want to delete your account?</p>
+    <p>This is a permanent decision and irrevocable. Don't cry after.</p>
+    <p>To procede, complete the following form: </p>
+    <form action="{{ url_for('delete')}}" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <p>By pressing the next bottom your account will be deleted permanently.</p>
+        <p>You can create a new account from zero.</p>
+        <button class="btn btn-primary" type="submit">DELETE ACCOUNT</button>
+    </form>
+{% endblock %}
